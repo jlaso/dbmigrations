@@ -27,7 +27,7 @@ require_once('BaseMigration.php');
 // find all migrations classes that rebuild entire DB at this moment
 $entries = array();
 
-$scanDir = __DIR__ . '/migrations';
+$scanDir = dirname(dirname(__FILE__)) . '/migrations';
 foreach (scandir($scanDir) as $entry)
 {
     if ($entry!='.' && $entry!='..' && !is_dir($scanDir.'/'.$entry)) {
@@ -65,7 +65,7 @@ function processMigration($version)
 {
     $db = ORM::get_db();
     $migrateClass = "migration" . $version;
-    $migrateFile  = "migrations/" . $migrateClass . '.php';
+    $migrateFile  = "../migrations/" . $migrateClass . '.php';
     //print $migrateFile . ' ';
     require $migrateFile;
     $migrate = new $migrateClass();
