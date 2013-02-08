@@ -1,0 +1,24 @@
+commit 01d973858093326fe5bfa03d075717cbde60017a
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Fri Feb 8 22:29:37 2013 +0100
+
+    - Putting migrations folder over to can include migrations class files into
+      git master project.
+
+commit 48f6f4a52ac4159042eafdd2a8b45ef165be5928
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Fri Feb 8 21:30:43 2013 +0100
+
+    - Move the README.md to project root.
+
+commit 4c6119c00c5082c6075abde095024e491f50f3d4
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Fri Feb 8 21:29:09 2013 +0100
+
+    - Version 1.0
+
+commit 793895031eed94d985e4d77e33109b988caaecc8
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Fri Feb 8 21:14:41 2013 +0100
+
+    - Initial commit

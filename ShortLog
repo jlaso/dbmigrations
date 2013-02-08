@@ -1,3 +1,6 @@
-joseluis laso (1):
+joseluis laso (4):
       - Initial commit
+      - Version 1.0
+      - Move the README.md to project root.
+      - Putting migrations folder over to can include migrations class files into       git master project.
 
