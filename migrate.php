@@ -23,6 +23,7 @@ require_once($baseDir.'server.php');
 ORM::configure('driver_options', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 
 require_once('BaseMigration.php');
+require_once('Fixture.php');
 
 // find all migrations classes that rebuild entire DB at this moment
 $entries = array();
