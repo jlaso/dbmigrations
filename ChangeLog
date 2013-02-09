@@ -1,3 +1,23 @@
+commit 91905f390c5b4066c7029ae0016a6c6552bb83c4
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sat Feb 9 19:56:00 2013 +0100
+
+    - MIGRATIONS_DIR as a constant that permits call migrate.php directly
+      from another folder, and control error in exec SQL that prints the
+      SQL sentence that causes the error.
+
+commit 76409cfc4b502224d3ba1bda999ece00754a1115
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sat Feb 9 15:40:14 2013 +0100
+
+    - Added Fixture class for insert records as fixtures in migration process.
+
+commit e69c5f6b16fd9bf41c1c132c6adb65e30ce30d0a
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Fri Feb 8 22:31:05 2013 +0100
+
+    - Change to version 1.1
+
 commit 01d973858093326fe5bfa03d075717cbde60017a
 Author: joseluis laso <wld1373@gmail.com>
 Date:   Fri Feb 8 22:29:37 2013 +0100

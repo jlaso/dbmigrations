@@ -1,6 +1,9 @@
-joseluis laso (4):
+joseluis laso (7):
       - Initial commit
       - Version 1.0
       - Move the README.md to project root.
       - Putting migrations folder over to can include migrations class files into       git master project.
+      - Change to version 1.1
+      - Added Fixture class for insert records as fixtures in migration process.
+      - MIGRATIONS_DIR as a constant that permits call migrate.php directly       from another folder, and control error in exec SQL that prints the       SQL sentence that causes the error.
 
