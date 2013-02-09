@@ -21,6 +21,7 @@ $baseDir = dirname(dirname(dirname(dirname(__FILE__)))).'/';
 require_once($baseDir.'vendor/Idiorm/idiorm.php');
 require_once($baseDir.'server.php');
 ORM::configure('driver_options', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+ORM::configure('logging',true);
 
 require_once('BaseMigration.php');
 require_once('Fixture.php');
@@ -28,10 +29,10 @@ require_once('Fixture.php');
 // find all migrations classes that rebuild entire DB at this moment
 $entries = array();
 
-$scanDir = dirname(dirname(__FILE__)) . '/migrations';
-foreach (scandir($scanDir) as $entry)
+define ('MIGRATIONS_DIR', dirname(dirname(__FILE__)) . '/migrations');
+foreach (scandir(MIGRATIONS_DIR) as $entry)
 {
-    if ($entry!='.' && $entry!='..' && !is_dir($scanDir.'/'.$entry)) {
+    if ($entry!='.' && $entry!='..' && !is_dir(MIGRATIONS_DIR.'/'.$entry)) {
         if (preg_match('/migration(\d{14})/i',$entry,$matches)) {
             $entries[] = $matches[1];
         }
@@ -66,7 +67,7 @@ function processMigration($version)
 {
     $db = ORM::get_db();
     $migrateClass = "migration" . $version;
-    $migrateFile  = "../migrations/" . $migrateClass . '.php';
+    $migrateFile  = MIGRATIONS_DIR . '/' . $migrateClass . '.php';
     //print $migrateFile . ' ';
     require $migrateFile;
     $migrate = new $migrateClass();

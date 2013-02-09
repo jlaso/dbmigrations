@@ -21,7 +21,15 @@ class BaseMigration
 
         $db = ORM::get_db();
 
-        $db->exec($sql);
+        try {
+
+            $db->exec($sql);
+
+        } catch (Exception $e) {
+
+            die($e->getMessage() . PHP_EOL . $sql);
+
+        }
 
 
     }
