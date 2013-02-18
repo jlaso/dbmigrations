@@ -16,12 +16,16 @@
  *
  */
 
+header("Content-type: text/plain; charset=utf-8");
+
 $baseDir = dirname(dirname(dirname(dirname(__FILE__)))).'/';
 
-require_once($baseDir.'vendor/Idiorm/idiorm.php');
-require_once($baseDir.'server.php');
-ORM::configure('driver_options', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
-ORM::configure('logging',true);
+if ( ! defined('FAKE') ) {
+    require_once($baseDir.'vendor/Idiorm/idiorm.php');
+    require_once($baseDir.'server.php');
+    ORM::configure('driver_options', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+    ORM::configure('logging',true);
+}
 
 require_once('BaseMigration.php');
 require_once('Fixture.php');
