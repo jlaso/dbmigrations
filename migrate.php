@@ -98,8 +98,8 @@ foreach ($entries as $entry) {
         print '... ';
 
         if ($result) {
-            $sql = "INSERT INTO `version_info` (`version`) VALUES ('%d');";
-            $db->exec(sprintf($sql,$entry));
+            $sql = "INSERT INTO `version_info` (`version`) VALUES ('%s');";
+            $db->exec(sprintf($sql, $entry));
             print " ok.";
         } else {
             print " failed.";
